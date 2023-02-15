@@ -61,4 +61,12 @@ public class PlayerController : MonoBehaviour
             audioSrc.PlayOneShot(crashSound);
         }
     }
+
+    public void reset()
+    {
+        anim.SetBool("Death_b", false);
+        anim.Play("Death.Alive");
+        anim.Play("Movement.Run_Static");
+        dead = false;
+    }
 }

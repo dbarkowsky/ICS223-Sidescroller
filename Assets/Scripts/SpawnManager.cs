@@ -36,4 +36,10 @@ public class SpawnManager : MonoBehaviour
         Obstacle obstacle = obj.GetComponent<Obstacle>();
         obstacles.Add(obstacle);
     }
+
+    public void DestroyObjects()
+    {
+        obstacles.ForEach(obstacle => Destroy(obstacle.gameObject));
+        obstacles = new List<Obstacle>();
+    }
 }
