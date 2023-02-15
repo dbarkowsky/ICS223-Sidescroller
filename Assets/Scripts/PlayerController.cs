@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameManager gameManager;
 
+    [SerializeField] private Animator anim;
+    private bool dead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +22,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetButtonDown("Jump") && grounded && !dead)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             grounded = false;
+            anim.SetTrigger("Jump_trig");
         }
     }
 
@@ -34,6 +38,9 @@ public class PlayerController : MonoBehaviour
         } else if (collision.gameObject.tag == "Obstacle")
         {
             gameManager.EndGame();
+            anim.SetBool("Death_b", true);
+            anim.SetInteger("DeathType_int", 2);
+            dead = true;
         }
     }
 }

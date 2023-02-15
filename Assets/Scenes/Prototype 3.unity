@@ -600,6 +600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1279415864}
   gameManager: {fileID: 1005078918}
+  anim: {fileID: 1279415865}
 --- !u!136 &1279415863
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -630,6 +631,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!95 &1279415865 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 6f52b946693e54048af74f5cd6ba49f8, type: 3}
+  m_PrefabInstance: {fileID: 303983282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2014335011
 GameObject:
   m_ObjectHideFlags: 0
