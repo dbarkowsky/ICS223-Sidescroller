@@ -39,7 +39,9 @@ public class SpawnManager : MonoBehaviour
 
     public void DestroyObjects()
     {
-        obstacles.ForEach(obstacle => Destroy(obstacle.gameObject));
+        obstacles.ForEach(obstacle => {
+            if (obstacle != null) Destroy(obstacle.gameObject);
+        });
         obstacles = new List<Obstacle>();
     }
 }
